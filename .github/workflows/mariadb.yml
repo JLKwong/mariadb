@@ -21,7 +21,6 @@ jobs:
           base_64="mariadb:latest"
           base_arm="linuxserver/mariadb:latest"
           source .github/workflows/utils.sh
-
           mariadb_amd64_sha=$(get_manifest_sha "$repo:latest" "amd64")
           echo $mariadb_amd64_sha
           base_amd64_sha=$(get_manifest_sha "$base_64:latest" "amd64")
