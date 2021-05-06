@@ -59,4 +59,4 @@ jobs:
           #  docker manifest push $repo:$tag; docker manifest push $repo:$tag2
           #else
           #  echo "no changes"
-          #fi
+          fi
