@@ -46,14 +46,15 @@ jobs:
             tag=$(date +%Y%m%d%H%M)
             tag2="latest"
             echo $tag
-            docker manifest create $repo:$tag "$base_64@"$base_amd64_sha "$base_arm@"$base_arm_sha "$base_64@"$base_arm64_sha
-            docker manifest create $repo:$tag2 "$base_64@"$base_amd64_sha "$base_arm@"$base_arm_sha "$base_64@"$base_arm64_sha
-            docker manifest annotate $repo:$tag "$base_64@"$base_amd64_sha --arch amd64
-            docker manifest annotate $repo:$tag "$base_arm@"$base_arm_sha --arch arm
-            docker manifest annotate $repo:$tag "$base_64@"$base_arm64_sha --arch arm64
-            docker manifest annotate $repo:$tag2 "$base_64@"$base_amd64_sha --arch amd64
-            docker manifest annotate $repo:$tag2 "$base_arm@"$base_arm_sha --arch arm
-            docker manifest annotate $repo:$tag2 "$base_64@"$base_arm64_sha --arch arm64
+            create_manifest $repo $tag $tag2 $base_64-tags:amd64 "$base_arm-tags:arm $base_64-tags:arm64
+          #  docker manifest create $repo:$tag "$base_64@"$base_amd64_sha "$base_arm@"$base_arm_sha "$base_64@"$base_arm64_sha
+          #  docker manifest create $repo:$tag2 "$base_64@"$base_amd64_sha "$base_arm@"$base_arm_sha "$base_64@"$base_arm64_sha
+          #  docker manifest annotate $repo:$tag "$base_64@"$base_amd64_sha --arch amd64
+          #  docker manifest annotate $repo:$tag "$base_arm@"$base_arm_sha --arch arm
+          #  docker manifest annotate $repo:$tag "$base_64@"$base_arm64_sha --arch arm64
+          #  docker manifest annotate $repo:$tag2 "$base_64@"$base_amd64_sha --arch amd64
+          #  docker manifest annotate $repo:$tag2 "$base_arm@"$base_arm_sha --arch arm
+          #  docker manifest annotate $repo:$tag2 "$base_64@"$base_arm64_sha --arch arm64
             docker manifest inspect $repo:$tag
             docker manifest inspect $repo:$tag2
             docker manifest push $repo:$tag; docker manifest push $repo:$tag2
