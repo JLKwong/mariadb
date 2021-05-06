@@ -47,7 +47,7 @@ jobs:
             build_image "$base_arm:latest" arm "$repo"
             build_image "$base_64:latest" amd64 "$repo"
             build_image "$base_64:latest" arm64 "$repo"
-            #deploy_image "$repo" arm
+            deploy_image "$repo" arm
             #deploy_image "$repo" amd64
             #deploy_image "$repo" arm64
             #tag=$(date +%Y%m%d%H%M)
