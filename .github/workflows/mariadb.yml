@@ -43,7 +43,7 @@ jobs:
           echo $flag
           flag=true
           if [[ $flag == true ]]; then
-            tag=$(date +%Y%m%d%H%M)
+            tag="3.12-$(date +%Y%m%d%H%M)"
             tag2="latest"
             echo $tag
             docker manifest create $repo:$tag "$repo@"$base_amd64_sha "$repo@"$base_arm_sha "$repo@"$base_arm64_sha
