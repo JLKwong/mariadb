@@ -22,17 +22,17 @@ jobs:
           base_arm="linuxserver/mariadb"
           source .github/workflows/utils.sh
           mariadb_amd64_sha=$(get_manifest_sha "$repo:latest" "amd64")
-          #echo $mariadb_amd64_sha
-          #base_amd64_sha=$(get_manifest_sha "$base_64:latest" "amd64")
-          #echo $base_amd64_sha
-          #flag_amd64=$(is_base "$repo@"$base_amd64_sha "$repo@"$mariadb_amd64_sha)
-          #echo $flag_amd64
-          #mariadb_arm64_sha=$(get_manifest_sha "$repo:latest" "arm64")
-          #echo $mariadb_arm64_sha
-          #base_arm64_sha=$(get_manifest_sha "$base_64:latest" "arm64")
-          #echo $base_arm64_sha
-          #flag_arm64=$(is_base "$repo@"$base_arm64_sha "$repo@"$mariadb_arm64_sha)
-          #echo $flag_arm64
+          echo $mariadb_amd64_sha
+          base_amd64_sha=$(get_manifest_sha "$base_64:latest" "amd64")
+          echo $base_amd64_sha
+          flag_amd64=$(is_base "$repo@"$base_amd64_sha "$repo@"$mariadb_amd64_sha)
+          echo $flag_amd64
+          mariadb_arm64_sha=$(get_manifest_sha "$repo:latest" "arm64")
+          echo $mariadb_arm64_sha
+          base_arm64_sha=$(get_manifest_sha "$base_64:latest" "arm64")
+          echo $base_arm64_sha
+          flag_arm64=$(is_base "$repo@"$base_arm64_sha "$repo@"$mariadb_arm64_sha)
+          echo $flag_arm64
           #mariadb_arm_sha=$(get_manifest_sha "$repo:latest" "arm")
           #echo $mariadb_arm_sha
           #base_arm_sha=$(get_manifest_sha "$base_arm:latest" "arm")
