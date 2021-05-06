@@ -33,15 +33,15 @@ jobs:
           echo $base_arm64_sha
           flag_arm64=$(is_base "$repo@"$base_arm64_sha "$repo@"$mariadb_arm64_sha)
           echo $flag_arm64
-          #mariadb_arm_sha=$(get_manifest_sha "$repo:latest" "arm")
-          #echo $mariadb_arm_sha
-          #base_arm_sha=$(get_manifest_sha "$base_arm:latest" "arm")
-          #echo $base_arm_sha
-          #flag_arm=$(is_base "$repo@"$base_arm_sha "$repo@"$mariadb_arm_sha)
-          #echo $flag_arm
-          #flag=$(compare "$repo@"$base_arm_sha "$repo@"$mariadb_arm_sha "$repo@"$base_amd64_sha "$repo@"$mariadb_amd64_sha "$repo@"$base_arm64_sha "$repo@"$mariadb_arm64_sha)
-          #echo $flag
-          #flag=true
+          mariadb_arm_sha=$(get_manifest_sha "$repo:latest" "arm")
+          echo $mariadb_arm_sha
+          base_arm_sha=$(get_manifest_sha "$base_arm:latest" "arm")
+          echo $base_arm_sha
+          flag_arm=$(is_base "$repo@"$base_arm_sha "$repo@"$mariadb_arm_sha)
+          echo $flag_arm
+          flag=$(compare "$repo@"$base_arm_sha "$repo@"$mariadb_arm_sha "$repo@"$base_amd64_sha "$repo@"$mariadb_amd64_sha "$repo@"$base_arm64_sha "$repo@"$mariadb_arm64_sha)
+          echo $flag
+          flag=true
           #if [[ $flag == true ]]; then
           #  docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
           #  build_image "$base_arm:latest" arm "$repo"
