@@ -41,7 +41,6 @@ jobs:
           echo $flag_arm
           flag=$(compare "$repo@"$base_arm_sha "$repo@"$mariadb_arm_sha "$repo@"$base_amd64_sha "$repo@"$mariadb_amd64_sha "$repo@"$base_arm64_sha "$repo@"$mariadb_arm64_sha)
           echo $flag
-          flag=true
           if [[ $flag == true ]]; then
             tag=$(date +%Y%m%d%H%M)
             tag2="latest"
