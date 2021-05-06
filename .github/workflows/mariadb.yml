@@ -18,8 +18,8 @@ jobs:
         run: |
           export DOCKER_CLI_EXPERIMENTAL=enabled
           repo="jleekwong/mariadb"
-          base_64="mariadb:latest"
-          base_arm="linuxserver/mariadb:latest"
+          base_64="mariadb"
+          base_arm="linuxserver/mariadb"
           source .github/workflows/utils.sh
           mariadb_amd64_sha=$(get_manifest_sha "$repo:latest" "amd64")
           echo $mariadb_amd64_sha
