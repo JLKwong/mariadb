@@ -46,7 +46,7 @@ jobs:
             tag=$(date +%Y%m%d%H%M)
             tag2="latest"
             echo $tag
-            docker manifest create $repo:$tag "$repo@"$base_amd64_sha "$repo@"$base_arm_sha "$repo@"$base_arm64_sha
+            docker manifest create $repo:$tag "$repo@"$base_amd64_sha "$repo@"$base_arm64_sha
           #  docker manifest create $repo:latest "$repo@"$base_amd64_sha "$repo@"$base_arm_sha "$repo@"$base_arm64_sha
           #  docker manifest annotate $repo:latest "$repo@"$base_arm_sha --arch arm
           #  docker manifest annotate $repo:$tag "$repo@"$base_arm64_sha --arch arm64
